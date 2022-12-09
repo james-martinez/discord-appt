@@ -30,7 +30,7 @@ client.on(Events.MessageCreate, msg => {
                     const filt = body.filter(function (item) { return item.open != "0"; });
                     console.log(filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
-                    msg.channel.send('X Technologies, Inc.\n' + '```json\n' + jsmsg + '\n```');
+                    msg.channel.send('Lackland\n' + '```json\n' + jsmsg + '\n```');
                 });
             })
 
@@ -53,7 +53,7 @@ client.on(Events.MessageCreate, msg => {
                     const filt = body.filter(function (item) { return item.open != "0"; });
                     console.log(filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
-                    msg.channel.send('X Technologies, Inc.\n' + '```json\n' + jsmsg + '\n```');
+                    msg.channel.send('Randolph\n' + '```json\n' + jsmsg + '\n```');
                 });
             })
 
