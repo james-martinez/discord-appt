@@ -29,7 +29,7 @@ client.on(Events.MessageCreate, msg => {
                     const body = JSON.parse(data);
                     const filt = body.filter(function(item){return item.open != "0";});
                     console.log(filt);
-                    const jsmsg = JSON.stringify(JSON.parse(filt), null, 2)
+                    const jsmsg = JSON.stringify(filt, null, 2)
                     msg.channel.send('```json\n' + jsmsg + '\n```');
                 });
             })
