@@ -1,0 +1,22 @@
+const { Client, Events, GatewayIntentBits, messageLink } = require('discord.js');
+const { on } = require('events');
+const client = new Client({
+    intents: [
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.MessageContent
+    ]
+});
+client.on("ready", () => {
+    console.log(`Logged in as ${client.user.tag}!`)
+})
+client.on(Events.MessageCreate, msg => {
+    console.log(`Message from ${msg.author.username}: ${msg.content} , Channel: ${msg.channel.name}`);
+    if (msg.author.bot) return;
+    switch (msg.content) {
+        case "!appt":
+            msg.channel.send("Here's your meme!");
+
+    }
+})
+client.login(process.env.DISCORD_TOKEN);
