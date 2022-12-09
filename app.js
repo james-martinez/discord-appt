@@ -15,7 +15,7 @@ client.on("ready", () => {
 client.on(Events.MessageCreate, msg => {
     if (msg.author.bot) return;
     switch (msg.content) {
-        case "!":
+        case "!x":
             const url = "https://idco.dmdc.osd.mil/idco/locator/site/170805/appnt/"
                 + date.getFullYear() + "-" + (date.getMonth() + 1);
 
@@ -30,7 +30,7 @@ client.on(Events.MessageCreate, msg => {
                     const filt = body.filter(function(item){return item.open != "0";});
                     console.log(filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
-                    msg.channel.send('```json\n' + jsmsg + '\n```');
+                    msg.channel.send('X Technologies, Inc.\n' + '```json\n' + jsmsg + '\n```');
                 });
             })
 
