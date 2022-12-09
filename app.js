@@ -38,6 +38,8 @@ client.on(Events.MessageCreate, msg => {
                 console.log('An error', error);
             });
             lrequest.end()
+            break;
+
         case "!r":
             const rurl = "https://idco.dmdc.osd.mil/idco/locator/site/101622/appnt/"
                 + date.getFullYear() + "-" + (date.getMonth() + 1);
@@ -61,6 +63,7 @@ client.on(Events.MessageCreate, msg => {
                 console.log('An error', error);
             });
             rrequest.end()
+            break;
 
         case "!x":
             const xurl = "https://idco.dmdc.osd.mil/idco/locator/site/170805/appnt/"
@@ -85,8 +88,7 @@ client.on(Events.MessageCreate, msg => {
                 console.log('An error', error);
             });
             xrequest.end()
-
-
+            break;
 
     }
 })
