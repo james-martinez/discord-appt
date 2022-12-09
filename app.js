@@ -27,8 +27,8 @@ client.on(Events.MessageCreate, msg => {
 
                 response.on('end', () => {
                     const body = JSON.parse(data);
-                    console.log(body);
-                    msg.channel.send('```json\n' + body.filter(function(item){return item.open != "0";}).toString() + '\n```');
+                    console.log(body.filter(function(item){return item.open != "0";}));
+                    msg.channel.send('```json\n' + body.filter(function(item){return item.open != "0";}) + '\n```');
                 });
             })
 
