@@ -15,7 +15,7 @@ client.on(Events.MessageCreate, msg => {
     if (msg.author.bot) return;
     switch (msg.content) {
         case "!appt":
-            msg.channel.send("Here's your meme!");
+            msg.channel.send("Here's your appt!");
 
     }
 })
