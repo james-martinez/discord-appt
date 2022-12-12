@@ -80,7 +80,7 @@ client.on(Events.MessageCreate, msg => {
                     const filt = body.filter(function (item) { return item.open != "0"; });
                     console.log(filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
-                    msg.channel.send('X Technologies, Inc.\n' + '```json\n' + jsmsg + '\n```');
+                    msg.channel.send('X Technologies, Inc.\nhttps://www.google.com/maps/dir//29.48636,-98.5705\n Open appointment for month:' + (date.getMonth() + 1) + ', ' + 'year:' + date.getFullYear() + '\n' + '```json\n' + jsmsg + '\n``` Make an appointment ');
                 });
             })
 
