@@ -90,7 +90,15 @@ client.on(Events.MessageCreate, msg => {
             });
             xrequest.end()
             break;
-
+            
+        case "!appt!help":
+            msg.channel.send(`Get current openings in for CAC appointments for the current month by site.
+            Commands to use in server:
+            !x -X Technologies, Inc.
+            !l - Lackand
+            !r - Randolph
+            !appt!help - Send this message`);
+            break;
     }
 })
 client.login(process.env.DISCORD_TOKEN);
