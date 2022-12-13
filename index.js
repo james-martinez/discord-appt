@@ -92,7 +92,7 @@ client.on(Events.MessageCreate, msg => {
             break;
             
         case "!appt!help":
-            msg.channel.send(`Get current openings in for CAC appointments for the current month by site.
+            msg.channel.send(`Get open CAC appointments for the current month by site.
 Commands to use in server:
 !appt!help - Commands list
 !x - X Technologies, Inc.
