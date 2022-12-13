@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: SHORT_SHA=$(echo $GITHUB_SHA | cut -c 1-8) docker build . --file Dockerfile -t ghcr.io/$GITHUB_REPOSITORY:$SHORT_SHA -t ghcr.io/$GITHUB_REPOSITORY:dev
+      run: docker build . --file Dockerfile -t ghcr.io/$GITHUB_REPOSITORY:"$(echo $GITHUB_SHA | cut -c 1-8)"-t ghcr.io/$GITHUB_REPOSITORY:dev
     - uses: azure/docker-login@v1
       with:
         login-server: ghcr.io
@@ -21,4 +21,3 @@ jobs:
         password: ${{secrets.DOCKER_TOKEN}}
     - name: Push the Docker image
       run: docker push --all-tags ghcr.io/$GITHUB_REPOSITORY
-        
