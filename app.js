@@ -28,9 +28,10 @@ client.on(Events.MessageCreate, msg => {
                 response.on('end', () => {
                     const body = JSON.parse(data);
                     const filt = body.filter(function (item) { return item.open != "0"; });
-                    console.log('!l\n' + filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
-                    msg.channel.send('Lackland\n' + '```json\n' + jsmsg + '\n```');
+                    console.log('!l\n' + jsmsg);
+                    msg.channel.send('Lackland https://goo.gl/maps/4U2u8R76DdoNY69i6\n Open appointments for ' + (date.getMonth() + 1) + '-' + date.getFullYear() + '\n' + '```json\n' + jsmsg + '\n``` Make an appointment https://idco.dmdc.osd.mil/idco/locator');
+
                 });
             })
 
@@ -53,9 +54,9 @@ client.on(Events.MessageCreate, msg => {
                 response.on('end', () => {
                     const body = JSON.parse(data);
                     const filt = body.filter(function (item) { return item.open != "0"; });
-                    console.log('!r\n' + filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
-                    msg.channel.send('Randolph\n' + '```json\n' + jsmsg + '\n```');
+                    console.log('!r\n' + jsmsg);
+                    msg.channel.send('Randolph https://goo.gl/maps/qiyBAXRoibnwJoRf8\n Open appointments for ' + (date.getMonth() + 1) + '-' + date.getFullYear() + '\n' + '```json\n' + jsmsg + '\n``` Make an appointment https://idco.dmdc.osd.mil/idco/locator');
                 });
             })
 
@@ -78,8 +79,8 @@ client.on(Events.MessageCreate, msg => {
                 response.on('end', () => {
                     const body = JSON.parse(data);
                     const filt = body.filter(function (item) { return item.open != "0"; });
-                    console.log('!x\n' + filt);
                     const jsmsg = JSON.stringify(filt, null, 2)
+                    console.log('!x\n' + jsmsg);
                     msg.channel.send('X Technologies, Inc. https://goo.gl/maps/5KcGYudM5jPTM9vU8\n Open appointments for ' + (date.getMonth() + 1) + '-' + date.getFullYear() + '\n' + '```json\n' + jsmsg + '\n``` Make an appointment https://idco.dmdc.osd.mil/idco/locator');
                 });
             })
