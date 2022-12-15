@@ -1,6 +1,6 @@
 FROM node:lts
 WORKDIR /app
 COPY ./index.js /app/
-RUN npm init -y
-RUN npm install discord.js
+COPY ./package.json /app/
+RUN npm install
 CMD [ "node", "index.js" ]
