@@ -11,12 +11,6 @@ const client = new Client({
 });
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`)
-    channel.send(`Get open CAC appointments for the current month by site.
-Commands to use in server:
-!appt!help - Commands list
-!x - X Technologies, Inc.
-!l - Lackand
-!r - Randolph`);
 })
 client.on(Events.MessageCreate, msg => {
     if (msg.author.bot) return;
