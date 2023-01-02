@@ -1,6 +1,5 @@
 const { Client, Events, GatewayIntentBits, messageLink } = require('discord.js');
 const https = require('https');
-const date = new Date();
 const { on } = require('events');
 const client = new Client({
     intents: [
@@ -15,6 +14,7 @@ client.on("ready", () => {
 client.on(Events.MessageCreate, msg => {
     if (msg.author.bot) return;
     switch (msg.content) {
+        const date = new Date();
         case "!l":
             const lurl = "https://idco.dmdc.osd.mil/idco/locator/site/101567/appnt/"
                 + date.getFullYear() + "-" + (date.getMonth() + 1);
