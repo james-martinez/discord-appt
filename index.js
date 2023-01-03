@@ -17,7 +17,7 @@ client.on(Events.MessageCreate, msg => {
     switch (msg.content) {
         case "!l":
             const lurl = "https://idco.dmdc.osd.mil/idco/locator/site/101567/appnt/"
-                + date.getFullYear() + "-" + (date.getMonth() + 1);
+                + date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2);
 
             const lrequest = https.request(lurl, (response) => {
                 let data = '';
