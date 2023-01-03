@@ -43,7 +43,7 @@ client.on(Events.MessageCreate, msg => {
 
         case "!r":
             const rurl = "https://idco.dmdc.osd.mil/idco/locator/site/101622/appnt/"
-                + date.getFullYear() + "-" + (date.getMonth() + 1);
+                + date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2);
 
             const rrequest = https.request(rurl, (response) => {
                 let data = '';
@@ -68,7 +68,7 @@ client.on(Events.MessageCreate, msg => {
 
         case "!x":
             const xurl = "https://idco.dmdc.osd.mil/idco/locator/site/170805/appnt/"
-                + date.getFullYear() + "-" + (date.getMonth() + 1);
+                + date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2);
 
             const xrequest = https.request(xurl, (response) => {
                 let data = '';
