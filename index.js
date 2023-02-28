@@ -91,6 +91,31 @@ client.on(Events.MessageCreate, msg => {
             xrequest.end()
             break;
             
+        case "!x1":
+            const xurl = "https://idco.dmdc.osd.mil/idco/locator/site/170805/appnt/"
+                + date.getFullYear() + "-" + ("0" + (date.getMonth() + 2)).slice(-2);
+
+            const xrequest = https.request(xurl, (response) => {
+                let data = '';
+                response.on('data', (chunk) => {
+                    data = data + chunk.toString();
+                });
+
+                response.on('end', () => {
+                    const body = JSON.parse(data);
+                    const filt = body.filter(function (item) { return item.open != "0"; });
+                    const jsmsg = JSON.stringify(filt, null, 2)
+                    console.log('!x\n' + jsmsg);
+                    msg.channel.send('X Technologies, Inc. https://goo.gl/maps/5KcGYudM5jPTM9vU8\n Open appointments for ' + (date.getMonth() + 1) + '-' + date.getFullYear() + '\n' + '```json\n' + jsmsg + '\n``` Make an appointment https://idco.dmdc.osd.mil/idco/locator');
+                });
+            })
+
+            xrequest.on('error', (error) => {
+                console.log('An error', error);
+            });
+            xrequest.end()
+            break;
+            
         case "!appt!help":
             msg.channel.send(`Get open CAC appointments for the current month by site.
 Commands to use in server:
